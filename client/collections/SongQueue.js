@@ -2,19 +2,18 @@
 var SongQueue = Songs.extend({
 
   initialize () {
-    this.on('add', function(song) {
+    this.on('add', () => {
       if(this.length === 1) {
         this.playFirst();
       }
     }, this);
-    // console.log(this);
-    // debugger;
-    // this.on.('change:length', this.playFirst, this);
+
+    this.on('ended', () => {
+      this.remove(this.at(0));
+    }, this);
   },
 
-  // listen for when a song is added && the 'length' of songQueue is === 1
-    // call 'playFirst()'
-  
+
 
   playFirst () {
     _.first(this.models).play();

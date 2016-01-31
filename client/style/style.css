@@ -48,6 +48,10 @@ th {
     padding: 0 1px;
 }
 
+#queue tr {
+    background-color: rgba(56, 86, 54, 0.82);
+}
+
 #queue tr:first-child {
     background-color: #69B569;
 }

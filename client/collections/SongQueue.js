@@ -8,22 +8,32 @@ var SongQueue = Songs.extend({
       }
     }, this);
 
-    this.on('ended', () => {
-      this.remove(this.at(0));
-      if(this.length >= 1){
-        this.playFirst();
-      }
-    }, this);
+    // this.on('ended', () => {
+    //   this.remove(this.at(0));
+    //   if(this.length >= 1){
+    //     this.playFirst();
+    //   }
+    // }, this);
 
     this.on('dequeue', (song) => {
-      this.remove(song);
+      this.remove(song); //this is what we need
+      this.playFirst();
     }, this);
   },
 
 
 
   playFirst () {
-    _.first(this.models).play();
-  }
+    if(this.length){
+      this.at(0).play();
+    }else{
+      this.trigger('outtaSongs', this);
+    }
+  },
+
+  // playNext () {
+  //   this.shift();
+  //   this.playFirst();
+  // }
 
 });

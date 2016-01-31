@@ -1,0 +1,53 @@
+body {
+    background: #eee;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 100;
+    font-size: 1.3em;
+}
+
+tr{
+    background: steelblue;
+}
+
+
+td {
+    margin: 0px 5px;
+    padding: 5px 10px;
+    color: white;
+}
+
+td:first-child{
+    min-width: 100px;
+    border-radius: 100px 0 0 100px;
+}
+
+td:last-child{
+    border-radius: 0 100px 100px 0;
+    min-width: 330px;
+}
+
+tr:nth-child(even){
+    background: #59758A;
+}
+
+th {
+    min-width: 470px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 100;
+
+}
+
+.playerViewContainer {
+    width: 470px;
+}
+
+.playerViewContainer audio{
+    margin: auto;
+    width: 100%;
+    padding: 0 1px;
+}
+
+#queue tr:first-child {
+    background-color: #69B569;
+}

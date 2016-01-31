@@ -16,8 +16,10 @@ var AppView = Backbone.View.extend({
   },
 
   render: function() {
+    var audioContainer = '<div class="playerViewContainer"></div>';
+    var $audioContainer = $(audioContainer).append(this.playerView.$el);
     return this.$el.html([
-      this.playerView.$el,
+      $audioContainer,
       this.libraryView.$el,
       this.queueView.$el
     ]);
